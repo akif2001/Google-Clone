@@ -6,7 +6,7 @@ import { Feather } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
-const DiscoverScreen = () => {
+const DiscoverScreen = ({ navigation, style }: any) => {
 
     const [dereceHavaTahmini, setDereceHavaTahmini] = useState(0);
     const [resimHavaTahmini, setResimHavaTahmini] = useState('');
@@ -91,7 +91,7 @@ const DiscoverScreen = () => {
     }
 
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={[styles.container, {  }]}>
             <View style={{ marginTop: '5%' }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', margin: 10, marginTop: 15 }}>
                     <TouchableOpacity style={{ borderWidth: 0.5, borderColor: '#999', borderRadius: 17.5, padding: 2.5 }}>
@@ -108,7 +108,7 @@ const DiscoverScreen = () => {
 
                 <Image source={require('../assets/google-yazisi.png')} style={{ width: 175, height: 75, alignSelf: 'center' }} />
 
-                <TouchableOpacity style={{ borderWidth: 2.5, borderColor: '#f5f5f5', borderRadius: 25, margin: 25 }}>
+                <TouchableOpacity onPress={() => navigation.navigate('Ara')} style={{ borderWidth: 2.5, borderColor: '#f5f5f5', borderRadius: 25, margin: 25 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <NewEvilIcons name='search' size={30} color='black' style={{ padding: 10 }} />
 
